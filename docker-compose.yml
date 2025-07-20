@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  webapp:
+    build: .
+    container_name: orgchart-webapp
+    ports:
+      - "5173:5173"
+    networks:
+      - orgchart_net
+    volumes:
+      - .:/app
+    command: npm run dev -- --host --port 5173
+
+networks:
+  orgchart_net:
+    external: true
