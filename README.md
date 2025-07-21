@@ -1,12 +1,33 @@
-# React + Vite
+# README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Projeto - Organograma da Empresa Web APP
 
-Currently, two official plugins are available:
+Projeto organograma da empresa em conjunto com projeto https://github.com/murilo-miranda/orgchart-api
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Informações técnicas
 
-## Expanding the ESLint configuration
+- React 19.1.0
+- Vite 7.0.4
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Como executar o projeto
+
+- Instale docker na máquina
+- Faça clone do projeto
+- Na raiz do projeto, gere a imagem com o comando:
+```
+docker build .
+```
+- Na raiz do projeto, execute o container com o comando:
+```
+docker compose up
+```
+- Na raiz do projeto, acesse o container com o comando:
+```
+docker exec -it orgchart-webapp bash
+```
+
+### Como executar os testes
+- Dentro do container, execute o comando:
+```
+npx vitest run
+```
