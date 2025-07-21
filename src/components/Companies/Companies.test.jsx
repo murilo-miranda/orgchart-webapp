@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import { MemoryRouter } from 'react-router-dom';
 import {render, screen} from '@testing-library/react'
 import { Companies } from './Companies'
 import { MockedProvider } from '@apollo/client/testing';
@@ -25,17 +26,19 @@ describe('Companies Component', () => {
   describe('When companies exist', () => {
     test("it renders companies name", async () => {
       render(
-        <MockedProvider mocks={companiesMocksSuccess}>
-          <Companies />
-        </MockedProvider>
+        <MemoryRouter>
+          <MockedProvider mocks={companiesMocksSuccess}>
+            <Companies />
+          </MockedProvider>
+        </MemoryRouter>
       );
 
       const h1 = await screen.findByText('Empresas');
-      const uol = await screen.findByText('Uol');
-      const uolTech = await screen.findByText('Uol Tech');
+      const uolLink = await screen.findByRole('link', { name: "Uol" });
+      const uolTechLink = await screen.findByRole('link', { name: "Uol Tech" });
       expect(h1).toBeInTheDocument();
-      expect(uol).toBeInTheDocument();
-      expect(uolTech).toBeInTheDocument();
+      expect(uolLink).toBeInTheDocument();
+      expect(uolTechLink).toBeInTheDocument();
     });
   });
 

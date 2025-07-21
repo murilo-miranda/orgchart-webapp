@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Companies.module.css";
 import { useQuery } from "@apollo/client";
 import { GET_COMPANIES } from "../../graphql/company/queries/companies.query";
@@ -17,7 +18,7 @@ export function Companies() {
       <ul className={styles.list}>
         {data.companies.map((company) => (
           <li key={company.id} className={styles.companyItem}>
-            {company.name}
+            <Link to={`/company/${company.id}`}>{company.name}</Link>
           </li>
         ))}
       </ul>

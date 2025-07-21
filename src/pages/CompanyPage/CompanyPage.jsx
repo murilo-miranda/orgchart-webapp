@@ -1,0 +1,17 @@
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { GET_COMPANY } from '../../graphql/company/queries/company.query';
+import { Company } from '../../components/Company/Company';
+
+export default function CompanyPage() {
+  const { id } = useParams();
+
+  const { data, loading, error } = useQuery(GET_COMPANY, {
+    variables: { id },
+  });
+
+  if (loading) return <p>Carregando...</p>;
+  if (error) return <p>Erro ao carregar empresa.</p>;
+
+  return <Company company={data.company} />;
+}
