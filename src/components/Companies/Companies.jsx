@@ -1,6 +1,6 @@
 import styles from "./Companies.module.css";
 import { useQuery } from "@apollo/client";
-import { GET_COMPANIES } from "../graphql/companies.query";
+import { GET_COMPANIES } from "../../graphql/company/queries/companies.query";
 
 export function Companies() {
   const { loading, error, data } = useQuery(GET_COMPANIES);

@@ -7,7 +7,7 @@ import {
   companiesMocksEmpty,
   companiesMocksError,
   companiesMocksSuccess
-} from './mocks/companies.mock';
+} from '../mocks/companies.mock';
 
 describe('Companies Component', () => {
   describe('When content is loading', () => {
