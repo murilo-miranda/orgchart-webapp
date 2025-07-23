@@ -4,6 +4,12 @@ export const GET_COMPANY = gql`
   query GetCompany($id: ID!) {
     company(id: $id) {
       name
+      employees {
+        id
+        name
+        email
+        pictureUrl
+      }
     }
   }
 `;
