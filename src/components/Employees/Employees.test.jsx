@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { Employees } from './Employees'
+import { MockedProvider } from '@apollo/client/testing';
+import { companiesMocksSuccess } from '../mocks/companies.mock';
 
 describe('Employees Component', () => {
   describe('When employees exist', () => {
@@ -10,7 +12,11 @@ describe('Employees Component', () => {
         { id: 2, name: "Felipe", email: "felipe@uol.com.br", pictureUrl: '' },
       ];
 
-      render(<Employees employees={mockData} />);
+      render(
+        <MockedProvider mocks={companiesMocksSuccess}>
+          <Employees employees={mockData} />
+        </MockedProvider>
+      );
 
       expect(await screen.findByText('Colaboradores')).toBeInTheDocument();
       expect(await screen.findByText('Murilo')).toBeInTheDocument();
