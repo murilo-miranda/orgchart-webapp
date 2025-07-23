@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_COMPANY } from '../../graphql/company/queries/company.query';
 import { Company } from '../../components/Company/Company';
+import { Employees } from '../../components/Employees/Employees';
 
 export default function CompanyPage() {
   const { id } = useParams();
@@ -13,5 +14,12 @@ export default function CompanyPage() {
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>Erro ao carregar empresa.</p>;
 
-  return <Company company={data.company} />;
+  return (
+    <>
+    <div>
+      <Company company={data.company} />
+      <Employees employees={data.company.employees} />
+    </div>
+    </>
+  )
 }

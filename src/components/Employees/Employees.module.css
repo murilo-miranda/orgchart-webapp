@@ -1,0 +1,30 @@
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1E1E1E;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.employeeItem {
+  font-size: 16px;
+  padding: 0.75rem 1rem;
+  width: 300px;
+  height: 250px;
+  background-color: #e6c7ff;
+  border-radius: 8px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
