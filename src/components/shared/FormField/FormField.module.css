@@ -1,0 +1,17 @@
+.label {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+  display: block;
+}
+
+.input {
+  padding: 0.75rem;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: black
+}

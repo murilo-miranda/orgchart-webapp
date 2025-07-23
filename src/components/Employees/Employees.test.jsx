@@ -26,7 +26,11 @@ describe('Employees Component', () => {
 
   describe('When employees does not exist', () => {
     test("it renders empty message", async () => {
-      render(<Employees employees={[]} />);
+      render(
+        <MockedProvider mocks={companiesMocksSuccess}>
+          <Employees employees={[]} />
+        </MockedProvider>
+      );
 
       expect(await screen.findByText("Não existem colaboradores cadastrados")).toBeInTheDocument();
     });

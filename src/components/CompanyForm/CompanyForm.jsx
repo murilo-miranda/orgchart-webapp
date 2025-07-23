@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from './CompanyForm.module.css';
 import { useMutation } from '@apollo/client';
 import { CREATE_COMPANY } from '../../graphql/company/mutations/createCompany.query';
+import { FormField } from '../shared/FormField/FormField';
+import { Button } from '../shared/Button/Button';
 
 export function CompanyForm() {
   const [name, setName] = useState('');
@@ -25,20 +27,15 @@ export function CompanyForm() {
     <form onSubmit={handleSubmit} className={styles.form}>
       <h2 className={styles.title}>Nova Empresa</h2>
 
-      <div className={styles.inputContainer}>
-        <label htmlFor="company-name" className={styles.label}>Nome: </label>
-        <input
-          type="text"
-          id="company-name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className={styles.input}
-        />
-      </div>
+      <FormField
+        label="Nome:"
+        id="company-name"
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
-      <button type="submit" className={styles.button}>
-        Cadastrar
-      </button>
+      <Button />
 
       {success && <p className={styles.success}>Empresa criada com sucesso!</p>}
       {error && <p className={styles.error}>Erro ao criar empresa.</p>}
