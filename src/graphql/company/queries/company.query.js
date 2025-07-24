@@ -9,6 +9,10 @@ export const GET_COMPANY = gql`
         name
         email
         pictureUrl
+        manager {
+          id
+          name
+        }
       }
     }
   }

@@ -6,7 +6,7 @@ import { CREATE_EMPLOYEE } from '../../graphql/employee/mutations/createEmployee
 import { FormField } from '../shared/FormField/FormField';
 import { Button } from '../shared/Button/Button';
 
-export function EmployeeForm() {
+export function EmployeeForm({refetch}) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [picture, setPicture] = useState(null);
@@ -19,6 +19,7 @@ export function EmployeeForm() {
       setName('');
       setEmail('');
       setPicture(null);
+      refetch();
     },
   });
 
