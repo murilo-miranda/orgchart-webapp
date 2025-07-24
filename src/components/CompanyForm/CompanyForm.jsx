@@ -5,7 +5,7 @@ import { CREATE_COMPANY } from '../../graphql/company/mutations/createCompany.qu
 import { FormField } from '../shared/FormField/FormField';
 import { Button } from '../shared/Button/Button';
 
-export function CompanyForm() {
+export function CompanyForm({ refetch }) {
   const [name, setName] = useState('');
   const [success, setSuccess] = useState(false);
 
@@ -13,6 +13,7 @@ export function CompanyForm() {
     onCompleted: () => {
       setSuccess(true);
       setName('');
+      refetch();
     },
   });
 

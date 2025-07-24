@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client";
 import { GET_COMPANIES } from "../../graphql/company/queries/companies.query";
 
 export default function Home() {
-  const { loading, error, data } = useQuery(GET_COMPANIES);
+  const { loading, error, data, refetch } = useQuery(GET_COMPANIES);
 
   return (
     <div className={style.container}>
@@ -13,7 +13,7 @@ export default function Home() {
         <Companies loading={loading} error={error} companies={data?.companies}/>
       </div>
       <div>
-        <CompanyForm/>
+        <CompanyForm refetch={refetch}/>
       </div>
     </div>
   );
