@@ -4,6 +4,14 @@
 
 Projeto organograma da empresa em conjunto com projeto https://github.com/murilo-miranda/orgchart-api
 
+## Melhorias futuras
+
+- Criação de testes para os cenários
+- Melhoria visual
+- Correções de bugs como: Looping hierarquia profunda
+- Possível refactory para extrair código comum ou reaproveitável
+
+
 ## Informações técnicas
 
 - React 19.1.0
