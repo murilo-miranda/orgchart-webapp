@@ -1,8 +1,10 @@
+import style from './CompanyPage.module.css'
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_COMPANY } from '../../graphql/company/queries/company.query';
 import { Company } from '../../components/Company/Company';
 import { Employees } from '../../components/Employees/Employees';
+import { EmployeeForm } from '../../components/EmployeeForm/EmployeeForm';
 
 export default function CompanyPage() {
   const { id } = useParams();
@@ -15,11 +17,14 @@ export default function CompanyPage() {
   if (error) return <p>Erro ao carregar empresa.</p>;
 
   return (
-    <>
-    <div>
-      <Company company={data.company} />
-      <Employees employees={data.company.employees} />
+    <div className={style.container}>
+      <div>
+        <Company company={data.company} />
+        <Employees employees={data.company.employees} />
+      </div>
+      <div>
+        <EmployeeForm />
+      </div>
     </div>
-    </>
   )
 }
