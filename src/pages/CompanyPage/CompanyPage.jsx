@@ -9,7 +9,7 @@ import { EmployeeForm } from '../../components/EmployeeForm/EmployeeForm';
 export default function CompanyPage() {
   const { id } = useParams();
 
-  const { data, loading, error } = useQuery(GET_COMPANY, {
+  const { data, loading, error, refetch } = useQuery(GET_COMPANY, {
     variables: { id },
   });
 
@@ -23,7 +23,7 @@ export default function CompanyPage() {
         <Employees employees={data.company.employees} />
       </div>
       <div>
-        <EmployeeForm />
+        <EmployeeForm refetch={refetch} />
       </div>
     </div>
   )

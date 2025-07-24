@@ -29,3 +29,19 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.managerContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.managerLabel {
+  font-weight: bold;
+}
+
+.select {
+  width: 200px;
+  max-width: 100%;
+}
